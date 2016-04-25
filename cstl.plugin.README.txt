@@ -1,0 +1,70 @@
+INSTALL
+
+1. Copy include file from pawno/include to corresponding place
+2. Copy plugin binary into plugins folder
+3. Add "cstl" or "cstl.so" (linux) in your plugins in server.cfg
+4. Use #include <cstl> in scripts using cstl
+
+
+NATIVES
+
+
+VECTOR
+
+VECTORS DONT HAVE TO BE INITIALIZED, SPECIFY AN INTEGER AS VECID PARAMETER
+
+
+
+native vector_push_back(vecid, element); // push back integer
+native vector_push_back_float(vecid, Float:element); // push back float
+native vector_push_back_arr(vecid, element[]); // push back array (string)
+
+native vector_size(vecid); // get vector size
+
+native vector_get(vecid, id); // get integer by index
+native Float:vector_get_float(vecid, id); // get floating point number by index
+native vector_get_arr(vecid, id, buffer[], buflen); // get array element to buffer by index
+
+native vector_set(vecid, id, element); // set index
+native vector_set_float(vecid, id, Float:element); // set float
+native vector_set_arr(vecid, id, element[]); // set array
+
+native vector_clear(vecid); // clear vector
+native vector_resize(vecid, newsize); // resize vector to new size
+
+native vector_entry_type(vecid, id); // get element type (int, array or float)
+native vector_remove(vecid, id); // remove element by index
+
+native vector_find(vecid, element);  // find index of int element
+native vector_find_float(vecid, Float:element); // find index of float element
+native vector_find_arr(vecid, element[]); // find index of array
+
+native vector_globalize(vecid); // makes vector visible to all scripts
+native vector_deglobalize(vecid); // deglobalizes vector (vector removed from all scripts except calling script)
+native vector_is_globalized(vecid); // is vector ID globalized
+native vector_index_exists(vecid, index); // does index exist
+
+
+MAP
+
+MAPS ALSO DONT HAVE TO BE INITIALIZED
+
+native map_insert(mapid, key[], value); // insert with integer value
+native map_insert_float(mapid, key[], Float:value); // insert with float value
+native map_insert_arr(mapid, key[], value[]); // insert with array as value
+
+native map_get(mapid, key[]); // get integer
+native Float:map_get_float(mapid, key[]); // get float
+native map_get_arr(mapid, key[], buffer[], buflen); // get array to buffer
+
+native map_size(mapid); // element count of array
+native map_remove(mapid, key[]); // remove specific key
+native map_contains(mapid, key[]); // does map contain specific key
+native map_entry_type(mapid, key[]); // return value type of key (int, array or float)
+
+
+native map_clear(mapid); // clear the map
+
+native map_globalize(mapid); // makes map visible to all scripts
+native map_deglobalize(mapid); // deglobalizes map (map removed from all scripts except calling script)
+native map_is_globalized(mapid); // is map ID globalized

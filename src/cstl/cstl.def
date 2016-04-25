@@ -1,0 +1,7 @@
+LIBRARY	"cstl"
+EXPORTS
+	Supports
+	Load
+	Unload
+	AmxLoad
+	AmxUnload
